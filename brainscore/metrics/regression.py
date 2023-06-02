@@ -86,8 +86,9 @@ def linear_regression(xarray_kwargs=None):
     regression = XarrayRegression(regression, **xarray_kwargs)
     return regression
 
-def ridge_regression(xarray_kwargs=None):
-    regression = Ridge()
+def ridge_regression(regression_kwargs=None, xarray_kwargs=None):
+    regression_kwargs = regression_kwargs or {}
+    regression = Ridge(**regression_kwargs)
     xarray_kwargs = xarray_kwargs or {}
     regression = XarrayRegression(regression, **xarray_kwargs)
     return regression
